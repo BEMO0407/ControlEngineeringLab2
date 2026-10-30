@@ -1,9 +1,11 @@
-# Projekt: Laborbericht (MCI) – VORLAGE, Projektangaben anpassen
+# Projekt: Laborbericht (MCI) – Control Engineering, Lab 2 "Temperature Control"
 
-- Lehrveranstaltung: <Name der LV>
-- Autor:innen: <Name (Matrikelnummer)>, ...; Betreuung: <Name>
-- Kohorte: <BA-XXXX-00-0X>
-- Seitenvorgabe laut Laboranleitung: <max. Seiten Hauptteil>; Anhang zählt meist nicht.
+- Lehrveranstaltung: MECH-B-5-REG-REG2-ILV
+- Autor:innen: Benedikt Motzet (12313575), Urs Müller, Mathias Außerlechner;
+  Betreuung: Lukas Wild
+- Kohorte: BA-MECH-24_4C
+- Laboranleitung: `Control_Engineering_3_Laboratory_2026.pdf`
+- Seitenvorgabe laut Laboranleitung: max. 15 Seiten; Anhang zählt meist nicht.
   Discussion and Interpretation ist meist der wichtigste Teil → dort Platz lassen.
 - LaTeX mit der MCI-Klasse `mcidoc.cls` (state=Report). Die .cls NICHT verändern.
 - Bericht ist auf Englisch. Mit mir bitte auf Deutsch kommunizieren:
@@ -27,7 +29,7 @@
   `\num{}`, `\qty{}`, `\unit{}` setzen.
 - Gleichungen: grundsätzlich alle nummerieren (M040). Ausnahme Regelungstechnik: nur im
   Text referenzierte Gleichungen nummerieren (`equation`), alle anderen ohne Nummer
-  (`equation*`). <Für diesen Bericht festlegen.>
+  (`equation*`). Dieser Bericht ist Regelungstechnik → Ausnahme gilt.
 - Verweise im Text einheitlich: "Figure~\ref{}", "Table~\ref{}", "Equation~\eqref{}".
 - Seitennummerierung (römisch/arabisch/römisch) und Verzeichnisse am Ende sind in
   `main.tex` bereits umgesetzt, nicht ändern.
