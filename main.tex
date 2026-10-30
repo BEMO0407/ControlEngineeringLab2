@@ -1,0 +1,92 @@
+% =====================================================================
+%  VORLAGE LABORBERICHT (MCI, Klasse mcidoc, state=Report)
+%  Vorgaben: siehe CLAUDE.md (MCI-Formalkriterien, M-Codes).
+%  Kompilieren: latexmk -pdf main.tex (MiKTeX, biber)
+%  Kopiervorlagen für Tabellen, Abbildungen, Gleichungen, Zitate: Vorlagen.tex
+% =====================================================================
+\documentclass[state=Report]{mcidoc}
+\usepackage{tabularx}
+\usepackage{booktabs}                             % Tabellen ohne vertikale Linien (M057)
+\usepackage{pgfplots}                             % Diagramme direkt in LaTeX
+\pgfplotsset{compat=1.18}
+
+% ---------- Ergänzungen für die MCI-Formalkriterien ----------
+\sisetup{locale = UK, uncertainty-mode = separate} % Dezimalpunkt (M030), Unsicherheit mit ± (M031)
+\KOMAoptions{listof=totoc}                        % Verzeichnisse erscheinen im Inhaltsverzeichnis
+\KOMAoptions{numbers=noendperiod}                 % sonst "Figure 2.1.:" sobald ein Anhang existiert (M018)
+\AtBeginEnvironment{table}{\setstretch{1.1}}      % Tabellen kompakter als Fließtext (1.5), einheitlich (M018)
+\newenvironment{legendtable}[1]                  % Legende zu Gleichungen (M042), gleicher Zeilenabstand wie Tabellen
+  {\par\setstretch{1.1}\noindent\begin{tabular}{#1}}
+  {\end{tabular}\par}
+\usepackage[autostyle=true]{csquotes}            % englische Anführungszeichen
+\usepackage[backend=biber, style=ieee]{biblatex}  % IEEE-Zitierstil (M080)
+\addbibresource{references.bib}
+\newcounter{romanpage}
+% Seitenzahl + Name auch auf Kapitel-Startseiten (Stil "plain"), sonst fehlen sie dort (M010)
+\makeatletter
+\ofoot*{\thepage}
+\ifoot*{\Global@StudentName}
+\makeatother
+\KOMAoptions{plainfootsepline=true}
+
+% ---------- Metadaten: ANPASSEN ----------
+\SetMCI{Language = EN,                 % EN oder DE
+    Degree = BSc,
+    Title = {Lab Report},
+    StudentID = {00000000, 00000000},  % Matrikelnummern, gleiche Reihenfolge wie Namen
+    Student/Name = {First Author, Second Author},
+    Report/Supervisor/Name = {Supervisor Name},
+    Report/Cohort = {BA-XXXX-00-0X},
+    Report/Lecture = {Course Name},
+    Report/Date = {January 1, 2026},   % Labortermin bzw. Abgabedatum laut Anleitung
+    Report/Mode = Lab,                 % Lab -> "Lab Supervisor", Assignment -> "Supervisor"
+    Report/ToC/Primary = unset,        % Verzeichnisse werden unten selbst gesetzt (M010)
+    Report/ToC/Figures = unset,
+    Report/ToC/Tables  = unset,
+}
+
+\begin{document}
+
+% ---------- Vorspann: römische Seitenzahlen (M010) ----------
+\pagenumbering{Roman}
+\tableofcontents
+\clearpage
+\setcounter{romanpage}{\value{page}}
+\pagenumbering{arabic}
+
+% ---------- Hauptteil: arabische Seitenzahlen ----------
+\include{chapters/introduction}
+\include{chapters/procedure}
+\include{chapters/results}
+\include{chapters/discussion}
+
+% ---------- Nachspann: römisch fortlaufend (M010) ----------
+\clearpage
+\pagenumbering{Roman}
+\setcounter{page}{\value{romanpage}}
+
+\printbibliography[heading=bibintoc]
+\listoffigures
+\listoftables
+
+\addchap{List of Symbols}              % Formelzeichenverzeichnis (M049): jedes Formelzeichen eintragen
+\begingroup
+\setlength{\parfillskip}{0pt plus 1fil}  % sonst 10 pt breiter als der Satzspiegel (M057)
+\noindent
+\begin{tabularx}{\textwidth}{l X >{\raggedright\arraybackslash}p{0.2\textwidth}}
+  \toprule
+  Symbol & Description & Unit \\
+  \midrule
+  $t$            & time & \unit{\second} \\
+  $u$            & voltage & \unit{\volt} \\
+  \bottomrule
+\end{tabularx}
+\par
+\endgroup
+
+% ---------- Anhang: römisch fortlaufend, zählt meist nicht zur Seitenvorgabe ----------
+% Auskommentiert, solange er leer ist; zum Aktivieren beide Zeilen einkommentieren.
+% \appendix
+% \include{chapters/appendix}
+
+\end{document}
