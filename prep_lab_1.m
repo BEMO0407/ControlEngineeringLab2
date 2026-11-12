@@ -19,22 +19,22 @@ fprintf('Kmeas = %.0f\n', Kmeas);
 %  useDemo = true  -> synthetische Testdaten (zum Testen des Skripts)
 %  useDemo = false -> echte Messung (Beispiel von Sakai bzw. Labormessung)
 % -------------------------------------------------------------------------
-useDemo = true;
+useDemo = false;
  
 if useDemo
     dt   = 0.1;  t = (0:dt:600)';
     D    = 25 + 10*(t >= 60);                      % Sprung 25 % -> 35 % bei t = 60 s
     T    = 40 + 0.9*10*(1 - exp(-max(t-60-1.5,0)/90)) + 0.15*randn(size(t));
 else
-    % --- Variante CSV (Spalten: Zeit, Duty, Temperatur) ---
-    data = readmatrix('sprungantwort.csv');
-    t = data(:,1);  D = data(:,2);  T = data(:,3);
- 
-    % --- Variante MAT aus Data Inspector (Signalnamen ggf. anpassen) ---
-    % S   = load('sprungantwort.mat');               % enthält Simulink-Dataset
-    % ds  = S.data;                                  % Variablenname mit whos prüfen
-    % sT  = ds.get('temperature').Values;  t = sT.Time;  T = sT.Data;
-    % sD  = ds.get('Step Input').Values;   D = interp1(sD.Time, sD.Data, t, 'previous');
+    % --- Variante MAT aus Data Inspector ---
+    S   = load('Lap1_step_response.mat');            % enthält Simulink-Dataset
+    ds  = S.data{3};                                 % Run 3 enthält die Sprungantwort (25 % -> 35 %)
+    sT  = ds.get('Temperature').Values;  t = sT.Time;  T = sT.Data;
+    sD  = ds.get('Step Input').Values;   D = interp1(sD.Time, sD.Data, t, 'previous');
+
+    % --- Alternative: Variante CSV (Spalten: Zeit, Duty, Temperatur) ---
+    % data = readmatrix('sprungantwort.csv');
+    % t = data(:,1);  D = data(:,2);  T = data(:,3);
 end
 t = t(:); D = double(D(:)); T = double(T(:));
  
@@ -74,7 +74,6 @@ p    = lsqcurvefit(model, p0, tt, Tm, lb, ub, opts);
 K = p(1);  tau = p(2);  Tt = p(3);
 R2 = 1 - sum((Tm - model(p,tt)).^2) / sum((Tm - mean(Tm)).^2);
  
-fprintf('\n--- Identifikation ---\n');
 fprintf('K   = %.4f °C/%%\n', K);
 fprintf('tau = %.2f s\n', tau);
 fprintf('Tt  = %.2f s\n', Tt);
@@ -90,4 +89,3 @@ legend('Location', 'southeast');
 % Streckenmodell (s-Bereich)
 G   = tf(K, [tau 1], 'InputDelay', Tt);   % PT1Tt (Variante A)
 Gp1 = tf(K, [tau 1]);                     % PT1   (Variante B)
- 
