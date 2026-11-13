@@ -66,7 +66,7 @@ legend('Location', 'southeast');
 %% Trajektorie
 T_amb = 23.5;                 % Umgebungstemperatur
 t_traj = (0:Ts:250)';
-[w_traj, uV_traj] = trajektorie_2dof(t_traj, K, tau, T_amb);
+[w_traj, uV_traj] = trajektorie(t_traj, K, tau, T_amb);
 
 figure;
 subplot(2,1,1); grid on; hold on;
@@ -80,3 +80,8 @@ plot(t_traj, min(max(uV_traj, 0), 100), '--', 'LineWidth', 1.5, 'DisplayName', '
 xlabel('Zeit / s'); ylabel('Vorsteuerung u_V / %');
 title('Calculated Control K_v(s) = (\tau s + 1)/K');
 legend('Location', 'northeast');
+
+%% Low pass
+
+lowpas = tf([1],[0.16 1])
+lowpass_z=c2d(lowpas,10e-3)
