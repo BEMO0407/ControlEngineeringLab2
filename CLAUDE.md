@@ -43,6 +43,7 @@
 # MCI-Formalkriterien für schriftliche Abgaben (verbindlich)
 
 Codes M0xx entsprechen den Mängelnummern der MCI-Korrektur.
+Quelle: Academic Walkthrough Mechatronik v3.03, Kap. 10, 19, 21 (verbindlich).
 
 ## 1. Äußere Form (19.1)
 - M009 Ein- oder doppelseitiger Druck erlaubt.
@@ -71,6 +72,8 @@ Codes M0xx entsprechen den Mängelnummern der MCI-Korrektur.
     Schusterjungen (einzelne Zeilen am Seitenanfang oder -ende).
 - M019 Unpersönliches Passiv, Präsens („The experiment is carried out“, nicht „We did …“),
   sofern nicht anders vorgegeben.
+  - Abweichende Vorgaben der Laboranleitung gehen vor (z. B. Zeitform: durchgeführtes Experiment
+    in der Vergangenheit, Theorie/Bericht/Geräte im Präsens). Prüfen und unter „Festlegungen“ eintragen.
 - M020 Geschlechtergerechte Formulierung.
 - M021 Formeln siehe Abschnitt 6.
 - M022 Fettdruck nur sporadisch, keine Unterstreichungen.
@@ -102,7 +105,8 @@ Codes M0xx entsprechen den Mängelnummern der MCI-Korrektur.
 
 ## 4. Größen in Tabellen & Diagrammen (19.4)
 - M035 Einheiten werden wie mathematische Objekte behandelt: T = 293 K ⇔ T/K = 293.
-- M036 Tabellenkopf bzw. Achse als Quotient Größe/Einheit → in den Zellen stehen nur Zahlen.
+- M036 Tabellenkopf bzw. Achse kann als Quotient Größe/Einheit gesetzt werden → dann stehen in den
+  Zellen nur Zahlen. Ungekürzte Form (Kopf „U“, Zellen „0.1 V“) ist ebenfalls zulässig.
 - M037 Bei zusammengesetzten Einheiten runde Klammern. Eckige Klammern sind falsch.
 
 | Richtig | Falsch |
@@ -138,8 +142,8 @@ Codes M0xx entsprechen den Mängelnummern der MCI-Korrektur.
 - M049 Formelzeichenverzeichnis am Ende der Arbeit: alle Zeichen mit Einheit, bei Konstanten mit
   Wert. Indizes nicht einzeln aufführen (nur T, nicht T_A, T_E), keine Operatoren (Δ, Σ) und
   keine mathematischen Konstanten (π, e).
-- M050 Multiplikation: implizit (3x) oder zentrierter Punkt (3 · x). Kein kleines x. Asterisk (*)
-  verboten. Einheitlich bleiben.
+- M050 Multiplikation: implizit (3x) oder zentrierter Punkt (3 · x) empfohlen. Andere Zeichen
+  (kleines x) nicht empfohlen. Asterisk (*) verboten. Für dieselbe Operation stets dasselbe Zeichen.
   - Empfehlung: Variablen kursiv, Konstanten aufrecht (Radius R vs. Gaskonstante R).
 
 ## 7. Tabellen (19.7)
@@ -195,16 +199,17 @@ Codes M0xx entsprechen den Mängelnummern der MCI-Korrektur.
 - M099 Für jeden Berechnungsschritt einmal ausführlich an einem Beispiel zeigen; analoge
   Rechnungen danach ohne Weg.
 - M100 Die Beispielrechnung steht in Methoden, Ergebnisse, einem eigenen Kapitel oder im Anhang.
-- M101 Beispielrechnung mit allen Einheiten durchrechnen, mit Bezug auf die verwendeten
-  Messdaten (z. B. „Measurement #1 in Table x“).
+- M101 Beispielrechnung mit allen Einheiten durchrechnen. Bezug auf die verwendeten Messdaten
+  wie im Leitfaden-Beispiel (z. B. „Measurement #1 in Table x“).
   - Falsch: „The constant was calculated: K = 0.81.“
 
 ## 11. Quellenangaben (19.12)
 - M069 Übernommene Gedanken, Inhalte, Argumentationen, Abbildungen und Tabellen immer zitieren,
   möglichst aus der Originalquelle (nicht Sekundärzitat).
 - M070 Quellenangabe nah am zitierten Objekt (Satz, Bild, Tabelle).
-- M071 Zitation mit arabischer Zahl in eckigen Klammern: „… is not my own idea [12].“ Andere
-  Formen nur auf ausdrückliche Anweisung; die gewählte Form einheitlich durchziehen.
+- M071 Zitation als hochgestellte arabische Zahl in eckigen Klammern, hinter dem Satzzeichen:
+  „… is not my own idea.^[12]“. Andere Formen (u. a. „[12]“ im Text) nur auf ausdrückliche
+  Anweisung der LV-Leitung; die gewählte Form einheitlich durchziehen.
 - M073 Wörtliche Zitate in technischen Arbeiten nur sehr selten, stattdessen sinngemäß
   wiedergeben.
 - M074 Kurze wörtliche Zitate: im Fließtext, in Anführungszeichen, kursiv.
@@ -244,6 +249,35 @@ Plagiat (Ausschlussgrund aus dem Studium):
 
 ---
 
+## Laborberichte (Academic Walkthrough, Kap. 10)
+- Deckblatt muss enthalten: Bezeichnung der Laborübung, Name der Laborleitung, Bezeichnung des
+  Versuchs, Datum der Versuchsdurchführung, Jahrgangsbezeichnung, Namen aller Autor:innen mit
+  jeweils individueller Angabe des Studiengangs.
+- Automatisch 0 %: verspätete Abgabe, Deckblatt ohne Formalkriterien, krasse Orthographie- oder
+  Grammatikfehler.
+- Mindestaufbau: Einleitung & Aufgabenstellung, Versuchsaufbau & Materialien, Versuchsdurchführung
+  & Methoden, Ergebnis & Interpretation, Anhänge/Verzeichnisse.
+- In „Einleitung & Aufgabenstellung“ stehen noch keine Ergebnisse.
+- Durchführung: protokollieren, was tatsächlich gemacht wurde, inkl. Abweichungen und besonderer
+  Vorkommnisse. Keine Trivialitäten, keine Historie, keine Herleitungen bekannter Gleichungen.
+- Ergebnis & Interpretation: alle Durchläufe zeigen (sonst Anhang). Abweichungen von der Theorie
+  diskutieren und die ungefähre Größe von Störeinflüssen abschätzen.
+- Gewichtung: Äußere Form 20 %, Stil 20 %, Dokumentation 20 %, Ergebnis & Interpretation 40 %.
+- Nicht selbst erbrachte Messwerte oder Ergebnisse nur nach Rücksprache mit der Laborleitung,
+  sonst Plagiat.
+
+## KI-Nutzung (Academic Walkthrough, Kap. 21)
+- Nutzung von KI muss in einer „Declaration on the Use of AI Tools“ ausgewiesen werden, eine
+  einfache Zitation reicht nicht. Verschweigen: negative Beurteilung, bis hin zur Behandlung als Plagiat.
+- Ideenfindung ohne Texteinfluss: erlaubt, in der Regel nicht kennzeichnungspflichtig.
+- Textverbesserung ohne neue Inhalte (Grammatik, Stil, Lesbarkeit): erlaubt, kennzeichnungspflichtig.
+- Generierung oder Umformulierung von Text und Inhalten: nicht erlaubt in den Eigenleistungsteilen
+  (Material und Methodik, Ergebnisse, Interpretation, Diskussion). Ausnahmen evtl. bei Quellcode
+  und Datenaufbereitung; im Zweifel vorab mit der Betreuung klären.
+- Kap. 21 nennt besonders Abschlussberichte, Seminar-, Bachelor- und Masterarbeiten. Geltung für
+  Laborberichte mit der Betreuung klären.
+- Richtigkeit, Referenzen und Plagiatsfreiheit verantworten allein die Studierenden.
+
 ## 12. Prüf-Checkliste (wenn ich um einen Formal-Check bitte)
 
 Die Arbeit systematisch durchgehen und jeden Mangel mit M-Code und Fundstelle (Datei + Zeile)
@@ -253,13 +287,13 @@ melden:
 - [ ] Seitennummerierung römisch/arabisch/römisch (M010); Abstract/IVZ nicht im IVZ (M011)
 - [ ] Schwarz-Weiß-tauglich (M012)
 - [ ] Blocksatz, eine Schrift, konsistente Formatierung (M016–M018)
-- [ ] Passiv + Präsens, keine Ich-/Wir-Form (M019); keine Mischsprache (M014); keine
+- [ ] Passiv + Präsens bzw. Zeitform laut Laboranleitung, keine Ich-/Wir-Form (M019); keine Mischsprache (M014); keine
       Unterstreichungen (M022)
 - [ ] Leerzeichen zwischen Zahl und Einheit (M029); Einheiten aufrecht, Größen kursiv (M024/M025)
 - [ ] Einheitliches Dezimalzeichen, hier Punkt (M030); ± statt +/- (M031)
 - [ ] Keine eckigen Klammern bei Einheiten in Tabellenköpfen und Achsen (M037)
 - [ ] Sinnvolle signifikante Stellen (M038, M056)
-- [ ] Gleichungen zentriert, nur referenzierte nummeriert (rechts, runde Klammern), Zeichen
+- [ ] Gleichungen zentriert, nummeriert nach M040 (alle; Regelungstechnik: nur referenzierte), Zeichen
       erklärt, Legende bei zentralen Gleichungen, kein * (M039–M050)
 - [ ] Formelzeichenverzeichnis vorhanden und vollständig (M049)
 - [ ] Tabellen: Überschrift oben, im Text referenziert, Einheiten, im Verzeichnis (M051–M057)
@@ -267,6 +301,7 @@ melden:
       Größe/Einheit, Legende, Fehlerbalken, Messpunkte sichtbar (M058–M068)
 - [ ] Verzeichnis-Kurztitel einzeilig, ohne Quellen (M054/M064)
 - [ ] Beispielrechnung mit Einheiten für jeden Rechenschritt (M099–M101)
-- [ ] IEEE-Zitation, nummeriert nach Auftreten, [n] nah am Zitat, Pflichtfelder vollständig,
+- [ ] IEEE-Zitation, nummeriert nach Auftreten, hochgestelltes [n] nah am Zitat, Pflichtfelder vollständig,
       Zugriffsdatum bei Online-Quellen, kein Wikipedia (M069–M081)
-- [ ] Alle Autoren auf dem Deckblatt (M109)
+- [ ] Alle Autoren auf dem Deckblatt (M109); Deckblatt vollständig (Kap. 10.5, sonst 0 %)
+- [ ] Mindestaufbau, keine Ergebnisse in der Einleitung (Kap. 10.6); KI-Erklärung vorhanden (Kap. 21.4)
