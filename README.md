@@ -3,6 +3,11 @@
 LaTeX-Vorlage für Laborberichte mit der MCI-Klasse `mcidoc` (`state=Report`), abgestimmt auf die
 MCI-Formalkriterien (M-Codes, siehe `CLAUDE.md`).
 
+## Aktuelles PDF
+Der Bericht liegt kompiliert als [`main.pdf`](main.pdf) im Hauptordner. Mit `git pull` ist er
+immer auf dem Stand des letzten Commits. Wer `main.tex` oder `chapters/` ändert, kompiliert neu
+und committet `main.pdf` mit.
+
 ## Verwendung
 1. Repository kopieren bzw. als Template verwenden.
 2. In `main.tex` die Metadaten in `\SetMCI{...}` anpassen (Namen, Matrikelnummern, Betreuung,
